@@ -31,9 +31,9 @@ export async function getStaticProps() {
   
   const client = await MongoClient.connect('mongodb+srv://sridharrajkumar47:ytNiLQirXnlCyFe7@cluster0.ewkea2j.mongodb.net/TODO?retryWrites=true&w=majority');
 
-  const db = await client.db();
+  const db = client.db();
 
-  const todoCollections = await db.collection('todo');
+  const todoCollections =  db.collection('todo');
 
   const data = await todoCollections.find().toArray();
 
