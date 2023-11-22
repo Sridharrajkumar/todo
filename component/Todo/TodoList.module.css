@@ -1,0 +1,29 @@
+.todolist
+{
+    border: 1px solid black;
+    display: flex;
+    justify-content:space-between;
+    padding: 0px 6px;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 6px;
+    gap: 6px;
+    background-color: beige;
+}
+
+.todo{
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+}
+
+.title{
+    font-style: italic;
+}
+
+.trash
+{
+    background-color: red;
+    padding: 6px;
+    cursor: pointer;
+}
