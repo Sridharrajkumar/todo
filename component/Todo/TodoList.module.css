@@ -31,3 +31,15 @@
 .ticked{
     cursor: pointer;
 }
+
+.todobuttons{
+    display: flex;
+    justify-content: space-between;
+    gap:7px;
+}
+
+.todoedit{
+    background-color: black;
+    color: rgb(236, 10, 10);
+    cursor: pointer;
+}
