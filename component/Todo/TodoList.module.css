@@ -27,3 +27,7 @@
     padding: 6px;
     cursor: pointer;
 }
+
+.ticked{
+    cursor: pointer;
+}

@@ -43,7 +43,8 @@ export async function getStaticProps() {
     props: {
       todolist: data.map(list => ({
         title: list.title,
-        id: list._id.toString()
+        id: list._id.toString(),
+        viewed: list.viewed
       }))
     },
     revalidate: 30,

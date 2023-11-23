@@ -9,7 +9,7 @@ const Todoform = (props) => {
   const Submithandler = (e) => {
     e.preventDefault();
     const title = titleRef.current.value;
-    props.addTodoHandler ({title});
+    props.addTodoHandler ({title:title,viewed:false});
 
     setviewForm(false)
   };
