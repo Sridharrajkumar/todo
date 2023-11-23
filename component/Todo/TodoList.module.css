@@ -43,3 +43,19 @@
     color: rgb(236, 10, 10);
     cursor: pointer;
 }
+
+.editlist{
+    display: flex;
+    flex-direction: row;
+}
+
+.editlist input{
+    width: 100%;
+    padding: 6px;
+}
+
+.update{
+    background-color: chartreuse;
+    font-weight: bold;
+    cursor: pointer;
+}

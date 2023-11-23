@@ -39,6 +39,8 @@ export async function getStaticProps() {
 
   await client.close();
 
+  console.log(data);
+
   return {
     props: {
       todolist: data.map(list => ({
@@ -47,7 +49,7 @@ export async function getStaticProps() {
         viewed: list.viewed
       }))
     },
-    revalidate: 30,
+    revalidate: 2000,
   };
 }
 

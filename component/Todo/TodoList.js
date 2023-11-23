@@ -6,11 +6,13 @@ const TodoList = (props) => {
   const [editForm, setEditForm] = useState(false);
   const [editedTitle, setEditedTitle] = useState("");
   const [editingId, setEditingId] = useState(null);
+  const [mark, setMark] = useState(false);
 
   const todos = props.todolist;
-  //console.log(todos);
+  console.log(todos);
 
   const ToggleStatus = async (list) => {
+    setMark(!mark);
     const response = await fetch("/api/update-todo", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -23,6 +25,7 @@ const TodoList = (props) => {
   };
 
   const ToggleViewed = async (list) => {
+    setMark(!mark);
     const response = await fetch("/api/update-todo", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -67,7 +70,7 @@ const TodoList = (props) => {
     <ul className={classes.todo}>
       {todos.map((todo) => (
         <li key={todo.id} className={classes.todolist}>
-          {todo.viewed && (
+          {todo.viewed  && (
             <FaCheckSquare
               className={classes.ticked}
               onClick={() => ToggleViewed(todo)}
@@ -99,9 +102,9 @@ const TodoList = (props) => {
         </li>
       ))}
       {editForm && (
-        <li>
+        <li className={classes.editlist}>
           <input type="text" value={editedTitle} onChange={(e) => setEditedTitle(e.target.value)}/>
-          <button onClick={saveEditedValue}>Update</button>
+          <button onClick={saveEditedValue} className={classes.update}>Update</button>
         </li>
       )}
     </ul>
