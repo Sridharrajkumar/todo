@@ -6,13 +6,11 @@ const TodoList = (props) => {
   const [editForm, setEditForm] = useState(false);
   const [editedTitle, setEditedTitle] = useState("");
   const [editingId, setEditingId] = useState(null);
-  const [mark, setMark] = useState(false);
 
   const todos = props.todolist;
   console.log(todos);
 
   const ToggleStatus = async (list) => {
-    setMark(!mark);
     const response = await fetch("/api/update-todo", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -25,7 +23,6 @@ const TodoList = (props) => {
   };
 
   const ToggleViewed = async (list) => {
-    setMark(!mark);
     const response = await fetch("/api/update-todo", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
