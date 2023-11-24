@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Todoform from "../component/Todo/todoform";
+import Todoform from "../component/Todo/Todoform";
 import { MongoClient } from "mongodb";
 import TodoList from "../component/Todo/TodoList";
 import Card from "../component/Card/Card";
@@ -15,12 +15,16 @@ export default function Home(props) {
     });
   };
 
+  const filteredData = props.todolist.filter(list => {
+    return list.viewed === false;
+  })
+  //console.log(filteredData);
   return (
     <Card>
       <Head>
         <title>TodoList</title>
       </Head>
-      <TodoList todolist={props.todolist} />
+      <TodoList todolist={filteredData} />
       <Todoform addTodoHandler={addTodoHandler} />
     </Card>
   );

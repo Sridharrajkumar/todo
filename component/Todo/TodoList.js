@@ -84,12 +84,12 @@ const TodoList = (props) => {
           )}
           <h4 className={classes.title}>{todo.title}</h4>
           <div className={classes.todobuttons}>
-            <button
+            {!todo.viewed && <button
               className={classes.todoedit}
               onClick={() => editHandler(todo.id,todo.title)}
             >
               Edit
-            </button>
+            </button>}
             <button
               className={classes.trash}
               onClick={() => {
